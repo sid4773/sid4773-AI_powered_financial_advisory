@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | SmartClick</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-image: url('https://images.unsplash.com/photo-1525186402429-b4ff38bed47d?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00BFFF;
+    }
+
+    .container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      margin: 80px auto;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    .container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00BFFF;
+      font-size: 2.5rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .contact-form {
+      margin-top: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1rem;
+      resize: none;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      border: none;
+      background-color: #00BFFF;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #009acd;
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .container {
+        margin: 40px 20px;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="signin.html">Sign In</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="help.html">Help</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> support@smartclick.ai</p>
+      <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>Address:</strong> 123 AI Street, Silicon Valley, CA</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQs | SmartClick</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-image: url('https://www.freecodecamp.org/news/content/images/size/w2000/2021/08/help.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00BFFF;
+        }
+
+        .container {
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            margin: 80px auto;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00BFFF;
+            font-size: 2.5rem;
+        }
+
+        .faq-list {
+            text-align: left;
+            list-style: none;
+        }
+
+        .faq-list li {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+
+        .faq-list li strong {
+            color: #00BFFF;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .container {
+                margin: 40px 20px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signin.html">Sign In</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="help.html">Help</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="container">
+        <h1>Help & FAQs</h1>
+        <ul class="faq-list">
+            <li>
+                <strong>Q1: How can I reset my password?</strong>
+                A: Click on "Sign In" and use the "Forgot Password" option.
+            </li>
+            <li>
+                <strong>Q2: How do I update my profile information?</strong>
+                A: After signing in, go to "Account Settings".
+            </li>
+            <li>
+                <strong>Q3: What if I don't receive my OTP?</strong>
+                A: Check your spam folder or request a new OTP.
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
