@@ -2,143 +2,186 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | SmartClick</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | SmartClick</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
 
-        body {
-            background-image: url('https://smartclick.ai/wp-content/uploads/2020/06/MicrosoftTeams-image-4.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            min-height: 100vh;
-            color: #fff;
-        }
+    body {
+      background-image: url('https://smartclick.ai/wp-content/uploads/2020/06/MicrosoftTeams-image-4.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+    }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 0;
-        }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
 
-        nav {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-        }
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        nav a:hover {
-            color: #00BFFF;
-        }
+    nav a:hover {
+      color: #00BFFF;
+    }
 
-        .container {
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            margin: 80px auto;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-            position: relative;
-            z-index: 1;
-        }
+    .container {
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      margin: 80px auto;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
 
-        .container h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #00BFFF;
-            font-size: 2rem;
-        }
+    .container h1 {
+      color: #00BFFF;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
 
-        form input {
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            font-size: 1rem;
-        }
+    form input {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1rem;
+    }
 
-        form input::placeholder {
-            color: #ddd;
-        }
+    form input::placeholder {
+      color: #ddd;
+    }
 
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #00BFFF;
-            border: none;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #00BFFF;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        button:hover {
-            background-color: #009ACD;
-        }
+    button:hover {
+      background-color: #009ACD;
+    }
 
-        @media (max-width: 480px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
+    #otpSection {
+      margin-top: 20px;
+      display: none;
+    }
 
-            .container {
-                margin: 40px 20px;
-                padding: 30px;
-            }
-        }
-    </style>
-    <script src="app.js" defer></script>
+    #otpDisplay {
+      font-size: 1.2rem;
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .container {
+        margin: 40px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="signin.html">Sign In</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="help.html">Help</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="signin.html">Sign In</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="help.html">Help</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-    <div class="container">
-        <h1>Create Account</h1>
-        <form id="signupForm">
-            <input type="text" id="signupName" placeholder="Enter your name" required>
-            <input type="email" id="signupEmail" placeholder="Enter your email" required>
-            <input type="password" id="signupPassword" placeholder="Create a password" required>
-            <button type="button" onclick="signUp()">Sign Up</button>
-        </form>
-    </div>
+  <div class="container">
+    <h1>Create Account</h1>
+    <form id="signupForm">
+      <input type="text" id="signupName" placeholder="Enter your name" required>
+      <input type="email" id="signupEmail" placeholder="Enter your email" required>
+      <input type="password" id="signupPassword" placeholder="Create a password" required>
+      <button type="button" onclick="generateOTP()">Generate OTP</button>
+
+      <div id="otpSection">
+        <div id="otpDisplay"></div>
+        <input type="text" id="userOtp" placeholder="Enter the OTP" required>
+        <button type="button" onclick="verifyOTP()">Verify & Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    let generatedOtp = "";
+
+    function generateOTP() {
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      if (name && email && password) {
+        generatedOtp = Math.floor(100000 + Math.random() * 900000); // 6-digit random OTP
+        document.getElementById('otpDisplay').innerText = `Your OTP is: ${generatedOtp}`;
+        document.getElementById('otpSection').style.display = 'block';
+      } else {
+        alert("Please fill out all fields before generating OTP.");
+      }
+    }
+
+    function verifyOTP() {
+      const userOtp = document.getElementById('userOtp').value;
+      if (userOtp == generatedOtp) {
+        alert("Account created successfully!");
+        window.location.href = 'signin.html';
+      } else {
+        alert("Invalid OTP. Please try again.");
+      }
+    }
+  </script>
 </body>
 
 </html>
