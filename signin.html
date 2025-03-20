@@ -7,7 +7,6 @@
   <title>Sign In | SmartClick</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Common styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -163,8 +162,11 @@
       const password = document.getElementById('signinPassword').value;
 
       if (email && password) {
+        // Store login status in localStorage
+        localStorage.setItem('loggedIn', 'true');
         const username = email.split('@')[0];
         alert(`Welcome back, ${username}!`);
+        // Redirect to home page
         window.location.href = 'index.html';
       } else {
         alert('Please enter valid credentials.');
