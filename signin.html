@@ -2,142 +2,188 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In | SmartClick</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | SmartClick</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Common styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
 
-        body {
-            background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            min-height: 100vh;
-            color: #fff;
-        }
+    body {
+      background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+    }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 0;
-        }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
 
-        nav {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-        }
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        nav a:hover {
-            color: #00BFFF;
-        }
+    nav a:hover {
+      color: #00BFFF;
+    }
 
-        .container {
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            margin: 80px auto;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-            position: relative;
-            z-index: 1;
-        }
+    .container {
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      margin: 80px auto;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
 
-        .container h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #00BFFF;
-            font-size: 2rem;
-        }
+    .container h1 {
+      color: #00BFFF;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
 
-        form input {
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            font-size: 1rem;
-        }
+    form input {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1rem;
+    }
 
-        form input::placeholder {
-            color: #ddd;
-        }
+    form input::placeholder {
+      color: #ddd;
+    }
 
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #00BFFF;
-            border: none;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #00BFFF;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        button:hover {
-            background-color: #009ACD;
-        }
+    button:hover {
+      background-color: #009ACD;
+    }
 
-        @media (max-width: 480px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
+    .forgot-password {
+      color: #FFD700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
 
-            .container {
-                margin: 40px 20px;
-                padding: 30px;
-            }
-        }
-    </style>
-    <script src="app.js" defer></script>
+    .forgot-password:hover {
+      text-decoration: underline;
+      color: #FFA500;
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .container {
+        margin: 40px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="signin.html">Sign In</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="help.html">Help</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="signin.html">Sign In</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="help.html">Help</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-    <div class="container">
-        <h1>Welcome Back</h1>
-        <form id="signinForm">
-            <input type="email" id="signinEmail" placeholder="Enter your email" required>
-            <input type="password" id="signinPassword" placeholder="Enter your password" required>
-            <button type="button" onclick="signIn()">Sign In</button>
-        </form>
-    </div>
+  <div class="container">
+    <h1>Welcome Back</h1>
+    <form id="signinForm">
+      <input type="email" id="signinEmail" placeholder="Enter your email" required>
+      <input type="password" id="signinPassword" placeholder="Enter your password" required>
+
+      <span class="forgot-password" onclick="forgotPassword()">Forgot Password?</span>
+
+      <button type="button" onclick="signIn()">Sign In</button>
+    </form>
+  </div>
+
+  <script>
+    function signIn() {
+      const email = document.getElementById('signinEmail').value;
+      const password = document.getElementById('signinPassword').value;
+
+      if (email && password) {
+        const username = email.split('@')[0];
+        alert(`Welcome back, ${username}!`);
+        window.location.href = 'index.html';
+      } else {
+        alert('Please enter valid credentials.');
+      }
+    }
+
+    function forgotPassword() {
+      const email = document.getElementById('signinEmail').value;
+      if (email) {
+        const otp = Math.floor(1000 + Math.random() * 9000).toString();
+        localStorage.setItem('resetEmail', email);
+        localStorage.setItem('resetOTP', otp);
+        alert(`Your OTP is: ${otp}`);
+        window.location.href = 'reset_password.html';
+      } else {
+        alert('Please enter your email to receive OTP.');
+      }
+    }
+  </script>
 </body>
 
 </html>
