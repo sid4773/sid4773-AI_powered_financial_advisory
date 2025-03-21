@@ -1,0 +1,17 @@
+<?php
+$apiKey = "jar1DCDJaxI5si170hxoDo19tphhO9hW";
+$symbol = "AAPL";
+$url = "https://financialmodelingprep.com/api/v3/quote/$symbol?apikey=$apiKey";
+
+$response = file_get_contents($url);
+$data = json_decode($response, true);
+
+if (!empty($data) && isset($data[0])) {
+    echo json_encode([
+        "price" => $data[0]["price"],
+        "change" => $data[0]["changesPercentage"]
+    ]);
+} else {
+    echo json_encode(["error" => "Unable to fetch stock data"]);
+}
+?>

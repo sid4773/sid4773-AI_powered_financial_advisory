@@ -1,0 +1,21 @@
+<?php
+include 'db.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_POST["user_id"];
+    $query = $_POST["query"];
+
+    // Dummy AI response (Replace with actual AI API call)
+    $ai_response = "AI Analysis: The best investment depends on market trends!";
+
+    $sql = "INSERT INTO queries (user_id, query, ai_response) VALUES ('$user_id', '$query', '$ai_response')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo json_encode(["status" => "success", "message" => "Query submitted!", "ai_response" => $ai_response]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Error: " . $conn->error]);
+    }
+
+    $conn->close();
+}
+?>
