@@ -129,7 +129,6 @@
       }
     }
 
-    /* Dropdown Styling */
     #dropdownMenu {
       background-color: #333;
       position: absolute;
@@ -164,7 +163,7 @@
   <nav>
     <a href="index.html">Home</a>
     <span id="authLinks"></span>
-    <a href="signup.html">Sign Up</a>
+    <a href="signup.html" id="signupLink">Sign Up</a>
     <a href="help.html">Help</a>
     <a href="contact.html">Contact Us</a>
   </nav>
@@ -189,6 +188,7 @@
   <script>
     function renderAuthLinks() {
       const authLinks = document.getElementById('authLinks');
+      const signupLink = document.getElementById('signupLink');
       const loggedIn = localStorage.getItem('loggedIn') === 'true';
       const username = localStorage.getItem('username') || 'User';
       const currentPage = encodeURIComponent(window.location.pathname);
@@ -202,8 +202,10 @@
               <a href="#" onclick="logout(event)">Logout</a>
             </div>
           </div>`;
+        if (signupLink) signupLink.style.display = 'none';
       } else {
         authLinks.innerHTML = `<a href="signin.html?redirect=${currentPage}">Sign In</a>`;
+        if (signupLink) signupLink.style.display = 'inline-block';
       }
     }
 
@@ -218,7 +220,7 @@
       localStorage.removeItem('loggedIn');
       localStorage.removeItem('username');
       alert('Logged out successfully!');
-      renderAuthLinks(); // Re-render the nav without redirection
+      renderAuthLinks();
     }
 
     document.addEventListener('click', function (e) {
