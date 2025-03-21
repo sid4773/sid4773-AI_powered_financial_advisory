@@ -20,62 +20,99 @@
     body::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7); z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
     }
 
     nav {
       background: rgba(0, 0, 0, 0.8);
-      padding: 1rem; text-align: center;
-      position: sticky; top: 0; z-index: 2;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
 
     nav a {
-      color: #fff; text-decoration: none;
-      margin: 0 20px; font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
       transition: color 0.3s;
     }
 
-    nav a:hover { color: #00BFFF; }
-
-    .container {
-      max-width: 700px; padding: 40px; margin: 80px auto;
-      border-radius: 15px; backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.1);
-      text-align: center; box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-      position: relative; z-index: 1;
+    nav a:hover {
+      color: #00BFFF;
     }
 
-    input, textarea {
-      width: 100%; padding: 15px;
-      margin-bottom: 20px; border: none;
-      border-radius: 8px; font-size: 1rem;
+    .container {
+      max-width: 700px;
+      padding: 40px;
+      margin: 80px auto;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
     }
 
     button {
-      padding: 15px 30px; background-color: #00BFFF;
-      border: none; border-radius: 8px;
-      color: #fff; font-size: 1.1rem; font-weight: bold;
-      cursor: pointer; transition: background-color 0.3s;
+      padding: 15px 30px;
+      background-color: #00BFFF;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
 
-    button:hover { background-color: #009ACD; }
+    button:hover {
+      background-color: #009ACD;
+    }
 
     #dropdownMenu {
-      background-color: #333; position: absolute;
-      top: 100%; right: 0; display: none;
-      min-width: 150px; border-radius: 8px; z-index: 3;
+      background-color: #333;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      display: none;
+      min-width: 150px;
+      border-radius: 8px;
+      z-index: 3;
     }
 
     #dropdownMenu a {
-      color: #fff; text-decoration: none;
-      padding: 10px 15px; display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
     }
 
-    #dropdownMenu a:hover { background-color: #00BFFF; }
+    #dropdownMenu a:hover {
+      background-color: #00BFFF;
+    }
 
     .account-dropdown {
-      position: relative; display: inline-block;
+      position: relative;
+      display: inline-block;
       cursor: pointer;
     }
   </style>
@@ -83,11 +120,10 @@
 
 <body>
 
-  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <span id="authLinks"></span>
-    <a href="signup.html">Sign Up</a>
+    <a href="signup.html" id="signupLink">Sign Up</a>
     <a href="help.html">Help</a>
     <a href="contact.html">Contact Us</a>
   </nav>
@@ -102,10 +138,10 @@
     </form>
   </div>
 
-  <!-- JavaScript for user session -->
   <script>
     function renderAuthLinks() {
       const authLinks = document.getElementById('authLinks');
+      const signupLink = document.getElementById('signupLink');
       const loggedIn = localStorage.getItem('loggedIn') === 'true';
       const username = localStorage.getItem('username') || 'User';
 
@@ -118,8 +154,10 @@
               <a href="#" onclick="logout(event)">Logout</a>
             </div>
           </div>`;
+        signupLink.style.display = 'none';
       } else {
         authLinks.innerHTML = `<a href="signin.html">Sign In</a>`;
+        signupLink.style.display = 'inline-block';
       }
     }
 
